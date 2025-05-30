@@ -16,6 +16,7 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError(name + "must be greater than 0")
 
+
 class Rectangle(BaseGeometry):
     """Rectangle class that inherits from BaseGeometry."""
 
@@ -34,6 +35,7 @@ class Rectangle(BaseGeometry):
         """Returns rectangle description."""
         return ("[Rectangle] {}/{}".format(self.__width, self.__height))
 
+
 class Square(Rectangle):
     """Square class inheriting from Rectangle."""
 
@@ -49,4 +51,5 @@ class Square(Rectangle):
 
     def __str__(self):
         """Returns string representation of the square."""
-        return ("[Square] {}/{}".format(self._Rectangle__width, self._Rectangle__height))
+        return ("[Square] {}/{}".format(self._Rectangle__width,
+                self._Rectangle__height))
