@@ -4,5 +4,14 @@ import json
 
 
 def class_to_json(obj):
-    """Return obj attributes as dict."""
-    return obj.__dict__
+    '''
+    Function that returns the dictionnary description
+    with simple data structure for JSON serialization of an object
+
+    Args: obj (object): Given object
+
+    Return: dictionnary description of object
+    '''
+    if isinstance(obj, object) and '__dict__' in dir(obj):
+        return obj.__dict__
+    return obj
