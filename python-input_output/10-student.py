@@ -23,7 +23,8 @@ class Student:
             only attribute names contained in this list must be retrieved.
         Otherwise, all attributes must be retrieved.
         '''
-        if isinstance(attrs, list) and all(isinstance(el, str) for el in attrs):
-            return {key: self.__dict__[key], for key in attrs
-                    if key in self.__dict__}
-        return self.__dict__
+        if attrs is None:
+            return self.__dict__
+        else:
+            return {key: value for key,
+                    value in self.__dict__.items() if key in attrs}
